@@ -1,5 +1,7 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 import static org.junit.Assert.*;
@@ -10,30 +12,15 @@ import static java.util.Arrays.asList;
 
 public class PrimeFactorsTest {
 
-    @Test
-    public void primeFactorsForOne() {
-        PrimeFactors prime = new PrimeFactors(1);
+    public static void main(String[] args) {
 
-        assertEquals(Collections.emptyList(),prime.generate());
+        int number  = Integer.parseInt(new Helper().getUserInput("Enter a number"));
 
+        ArrayList<Integer> pFactors = new PrimeFactors(number).generate();
+
+        System.out.println("Prime Factors of "+number+" : "+pFactors);
     }
 
-    @Test
-    public void primeFactorsForNonPrimeNumbers() {
-        int number = 30;
-        PrimeFactors prime = new PrimeFactors(number);
-
-        assertEquals(asList(2,3,5),prime.generate());
-    }
-
-    @Test
-    public void primeFactorsForPrimeNumbers() {
-
-        PrimeFactors prime = new PrimeFactors(5);
-
-        assertEquals(Collections.emptyList(),prime.generate());
-
-    }
 
 
 
